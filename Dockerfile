@@ -16,4 +16,4 @@ COPY opt/qnib/logstash/etc/logstash.conf /opt/qnib/logstash/etc/
 COPY opt/qnib/entry/20-logstash.sh /opt/qnib/entry/
 ENV ENTRYPOINTS_DIR=/opt/qnib/entry
 RUN echo "tail -f /var/log/supervisor/logstash.log" >> /root/.bash_history
-CMD ["/opt/logstash/bin/logstash", "agent", "-f", "/etc/logstash/conf.d/"]
+CMD ["/opt/logstash/bin/logstash", "-f", "/etc/logstash/conf.d/"]
