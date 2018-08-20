@@ -1,6 +1,6 @@
 FROM qnib/alplain-openjre8-glibc
 
-ARG LOGSTASH_VER=6.3.1
+ARG LOGSTASH_VER=6.3.2
 ARG LOGSTASH_URL=https://artifacts.elastic.co/downloads/logstash
 RUN mkdir -p /opt/logstash \
  && wget -qO - ${LOGSTASH_URL}/logstash-oss-${LOGSTASH_VER}.tar.gz |tar xfz - -C /opt/logstash --strip-components=1
