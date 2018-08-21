@@ -1,4 +1,4 @@
 image:
-  kibana: 6.3.2
+  kibana: v6.3.2-0
   elasticsearch: 6.3.2
-  logstash: vkibana: v6.3.2-2
+  logstash: v6.3.2-2
