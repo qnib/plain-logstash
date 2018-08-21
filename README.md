@@ -1,4 +1,4 @@
-# plain-logstash (6.3.2-2)
+# plain-logstash (v6.3.2-2)
 Plain image running logstash-oss
 
 ## Fire it up

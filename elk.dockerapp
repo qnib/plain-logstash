@@ -33,7 +33,7 @@ services:
     environment:
         ES_MASTER_HOST: tasks.elasticsearch
   logstash:
-    image: qnib/plain-logstash:${image.logstash}
+    image: qnib/plain-logstash:v6.3.2-2
     healthcheck:
       disable: true
     ports:
