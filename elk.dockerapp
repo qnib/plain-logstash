@@ -15,7 +15,7 @@ configs:
     file: ./etc/logstash/logstash.conf
 services:
   elasticsearch:
-    image: qnib/plain-elasticsearch:${image.tag}
+    image: qnib/plain-elasticsearch:${image.elasticsearch}
     ports:
       - "9200:9200"
       - "9300:9300"
@@ -25,7 +25,7 @@ services:
       ES_NODE_MASTER: "true"
       ES_NODE_DATA: "true"
   kibana:
-    image: qnib/plain-kibana:${image.tag}
+    image: qnib/plain-kibana:${image.kibana}
     healthcheck:
       disable: true
     ports:
@@ -33,7 +33,7 @@ services:
     environment:
         ES_MASTER_HOST: tasks.elasticsearch
   logstash:
-    image: qnib/plain-logstash:${image.tag}
+    image: qnib/plain-logstash:${image.logstash}
     healthcheck:
       disable: true
     ports:

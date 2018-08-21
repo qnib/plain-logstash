@@ -6,7 +6,7 @@ Plain image running logstash-oss
 Start the ELK stack (all components use the same version) using `docker-app`.
 
 ```
-$ docker-app deploy -s dev.yml
+$ docker-app deploy -f dev.yml
 Creating network elk_default
 Creating config elk_logstash_config
 Creating service elk_logstash
