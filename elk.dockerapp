@@ -1,5 +1,5 @@
 ---
-version: 6.3.2-1
+version: 6.3.2-2
 name: elk
 description: "Simple ELK stack"
 maintainers:
