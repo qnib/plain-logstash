@@ -1,5 +1,5 @@
 ---
-version: 6.3.2-3
+version: 6.3.2-4
 name: elk
 description: "Simple ELK stack"
 maintainers:
@@ -33,7 +33,7 @@ services:
     environment:
         ES_MASTER_HOST: tasks.elasticsearch
   logstash:
-    image: qnib/plain-logstash:v6.3.2-3
+    image: qnib/plain-logstash:v6.3.2-4
     healthcheck:
       disable: true
     ports:
