@@ -1,6 +1,11 @@
-FROM qnib/alplain-openjre8-glibc
+ARG DOCKER_REGISTRY=docker.io
+ARG DOCKER_IMG_REPO=qnib
+ARG DOCKER_IMG_NAME=alplain-openjre8-glibc
+ARG DOCKER_IMG_TAG="2020-04-13.1"
+ARG DOCKER_IMG_HASH=
+FROM ${DOCKER_REGISTRY}/${DOCKER_IMG_REPO}/${DOCKER_IMG_NAME}:${DOCKER_IMG_TAG}${DOCKER_IMG_HASH}
 
-ARG LOGSTASH_VER=6.3.1
+ARG LOGSTASH_VER=7.6.2
 ARG LOGSTASH_URL=https://artifacts.elastic.co/downloads/logstash
 RUN mkdir -p /opt/logstash \
  && wget -qO - ${LOGSTASH_URL}/logstash-oss-${LOGSTASH_VER}.tar.gz |tar xfz - -C /opt/logstash --strip-components=1
