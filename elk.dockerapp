@@ -1,0 +1,46 @@
+---
+version: 6.3.2-4
+name: elk
+description: "Simple ELK stack"
+maintainers:
+- name: Christian Kniep
+  email: christian@qnib.org
+targets:
+  swarm: true
+  kubernetes: false
+---
+version: '3.6'
+configs:
+  logstash_config:
+    file: ./etc/logstash/logstash.conf
+services:
+  elasticsearch:
+    image: qnib/plain-elasticsearch:${image.elasticsearch}
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_HEAP_MAX: "512m"
+      ES_HEAP_MIN: "512m"
+      ES_NODE_MASTER: "true"
+      ES_NODE_DATA: "true"
+  kibana:
+    image: qnib/plain-kibana:${image.kibana}
+    healthcheck:
+      disable: true
+    ports:
+      - "5601:5601"
+    environment:
+        ES_MASTER_HOST: tasks.elasticsearch
+  logstash:
+    image: qnib/plain-logstash:v6.3.2-4
+    healthcheck:
+      disable: true
+    ports:
+      - "8080:8080"
+    configs:
+      - source: logstash_config
+        target: /opt/qnib/logstash/etc/logstash.conf
+    environment:
+        ES_MASTER_HOST: tasks.elasticsearch
+---
