@@ -1,3 +1,3 @@
 image:
-  kibana: v6.3.2-0
-  elasticsearch: 6.3.2
+  kibana: v7.6.2-2
+  elasticsearch: 1.6.0
